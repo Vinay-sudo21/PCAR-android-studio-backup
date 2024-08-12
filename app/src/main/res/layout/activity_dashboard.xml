@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#a4bbcb"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:text="PCAR Dashboard"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/profileIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/profile_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="120dp" />
+
+        <ImageView
+            android:id="@+id/logoutIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/logout_icon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="#939191"
+        app:cardElevation="10dp">
+
+        <TextView
+            android:id="@+id/userName"
+            android:text="Hello, user"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/locationIcon"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/location_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="130dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="120dp" />
+
+        <TextView
+            android:id="@+id/userLocation"
+            android:text="Amar Madhuban tech Park"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:padding="10dp"
+            android:layout_gravity="end|center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/logoutIcon"
+            android:layout_marginEnd="16dp"
+            android:layout_toLeftOf="@+id/logoutIcon"
+            android:layout_marginRight="16dp"
+            tools:ignore="NotSibling" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/userVID"
+        android:layout_below="@+id/cardView"
+        android:text="VID: 4Y1SL65848Z411439"
+        android:textColor="#939191"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:padding="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:padding="20dp"
+        android:layout_below="@+id/userVID"
+        android:layout_marginTop="60dp">
+
+        <RelativeLayout
+            android:id="@+id/acCardLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/acCard"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="30dp"
+                android:outlineSpotShadowColor="#000000"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <ImageView
+                    android:id="@+id/acImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    app:cardElevation="20dp"
+                    android:elevation="50dp"
+                    app:cardUseCompatPadding="true"
+                    android:src="@drawable/ac" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/acText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="HVAC ECU"
+                android:layout_below="@+id/acCard"
+                android:gravity="center"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/chairCardLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/chairCard"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="30dp"
+                android:outlineSpotShadowColor="#000000"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <ImageView
+                    android:id="@+id/chairImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    app:cardElevation="20dp"
+                    android:elevation="50dp"
+                    app:cardUseCompatPadding="true"
+                    android:src="@drawable/chair" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/chairText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Biometric seat ECU"
+                android:layout_below="@+id/chairCard"
+                android:gravity="center"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+
+    <!-- Cart 4 -->
+        <RelativeLayout
+            android:id="@+id/doorCardLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/doorCard"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="30dp"
+                android:outlineSpotShadowColor="#000000"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <ImageView
+                    android:id="@+id/doorImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    app:cardElevation="20dp"
+                    android:elevation="50dp"
+                    app:cardUseCompatPadding="true"
+                    android:src="@drawable/doors" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/doorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Door Lock ECU"
+                android:layout_below="@+id/doorCard"
+                android:gravity="center"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+
+    <!-- Cart 5 -->
+        <RelativeLayout
+            android:id="@+id/mirrorCardLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mirrorCard"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="30dp"
+                android:outlineSpotShadowColor="#000000"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <ImageView
+                    android:id="@+id/mirrorImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    app:cardElevation="20dp"
+                    android:elevation="50dp"
+                    app:cardUseCompatPadding="true"
+                    android:src="@drawable/mirror" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/mirrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Mirror ECU"
+                android:layout_below="@+id/mirrorCard"
+                android:gravity="center"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/handleCardLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/handleCard"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="30dp"
+                android:outlineSpotShadowColor="#000000"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <ImageView
+                    android:id="@+id/handleImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    app:cardElevation="20dp"
+                    android:elevation="50dp"
+                    app:cardUseCompatPadding="true"
+                    android:src="@drawable/stairing" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/handleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="ESCL ECU"
+                android:layout_below="@+id/handleCard"
+                android:gravity="center"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+
+   </GridLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gridLayout">
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="40dp"
+            android:backgroundTint="#a4bbcb"
+            android:text="Clear"
+            android:textColor="@color/black"
+            android:layout_marginLeft="40dp" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="220dp"
+            android:backgroundTint="#a4bbcb"
+            android:text="Save"
+            android:textColor="@color/black"
+            android:layout_marginLeft="220dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

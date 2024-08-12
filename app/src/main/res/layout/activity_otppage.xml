@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DBE2EA"
+    tools:context=".OTPPage">
+
+    <!-- App Bar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#a4bbcb"
+        app:titleTextColor="@android:color/black"
+        app:title="Verify Your Number"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:navigationIcon="?android:attr/homeAsUpIndicator" />
+
+    <TextView
+        android:id="@+id/otpSentMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="OTP has been sent to your registered number."
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="100dp"
+        app:cardBackgroundColor="#a4bbcb"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:padding="16dp"
+            android:layout_below="@id/otpSentMessage"
+            android:layout_marginBottom="50dp"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                app:boxBackgroundMode="outline">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextDigit1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#dbe2ea"
+                    android:hint=""
+                    android:inputType="number"
+                    android:maxLength="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                app:boxBackgroundMode="outline">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextDigit2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    android:background="#dbe2ea"
+                    android:inputType="number"
+                    android:maxLength="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                app:boxBackgroundMode="outline">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextDigit3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    android:background="#dbe2ea"
+                    android:inputType="number"
+                    android:maxLength="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:boxBackgroundMode="outline">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextDigit4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    android:background="#dbe2ea"
+                    android:inputType="number"
+                    android:maxLength="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/register"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#dbe2ea"
+            android:text="Validate OTP"
+            android:textColor="@color/black" />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

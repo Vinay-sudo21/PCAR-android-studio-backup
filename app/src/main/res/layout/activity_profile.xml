@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#a4bbcb"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <!-- Title Text Appearance -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:text="User Profile"
+            android:layout_centerVertical="true"/>
+
+        <!-- Logout Icon -->
+        <ImageView
+            android:id="@+id/logoutIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/logout_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="250dp"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/userProfileCard"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="150dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- User Photo -->
+            <ImageView
+                android:id="@+id/userPhoto"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/user"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"/>
+
+            <!-- User Name -->
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John Doe"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_below="@+id/userPhoto"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Other User Information -->
+            <!-- Add TextViews for mobile number, vehicle number, address, etc. -->
+
+            <!-- User Mobile Number -->
+            <TextView
+                android:id="@+id/mobileNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mobile Number: 123-456-7890"
+                android:layout_below="@+id/username"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"/>
+
+            <!-- User Vehicle Number -->
+            <TextView
+                android:id="@+id/vehicleNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vehicle Number: ABC123"
+                android:layout_below="@+id/mobileNumber"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"/>
+
+            <!-- User Address -->
+            <TextView
+                android:id="@+id/userAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User Address: 123 Main Street"
+                android:layout_below="@+id/vehicleNumber"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

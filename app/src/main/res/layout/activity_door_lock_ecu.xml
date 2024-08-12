@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoorLockEcu">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#a4bbcb"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <!-- Title Text Appearance -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:text="PCAR Dashboard"
+            android:layout_centerVertical="true"/>
+
+        <!-- Profile Icon -->
+        <ImageView
+            android:id="@+id/profileIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/profile_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="160dp" />
+        <!-- Logout Icon -->
+        <ImageView
+            android:id="@+id/logoutIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/logout_icon"
+            android:layout_centerVertical="true"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|start"
+        android:layout_below="@+id/toolbar"
+        app:cardBackgroundColor="#939191"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="10dp"
+        app:cardPreventCornerOverlap="true"
+        >
+        <TextView
+            android:id="@+id/userName"
+            android:text="Door Lock ECU"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:layout_gravity="center|start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/locationIcon"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/location_icon"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center|start"
+            android:layout_marginLeft="200dp" />
+
+        <TextView
+            android:id="@+id/userLocation"
+            android:text="Amar Madhuban tech Park"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:padding="10dp"
+            android:layout_gravity="center|end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/userVID"
+        android:layout_below="@+id/cardView"
+        android:text="VID: 4Y1SL65848Z411439"
+        android:textColor="#939191"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:padding="20dp"
+        android:layout_marginLeft="190dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/doorCard"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_below="@+id/userVID"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="60dp"
+        android:outlineSpotShadowColor="#000000"
+        app:cardBackgroundColor="#a4bbcb"
+        app:cardElevation="30dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/cardtext"
+                android:text="Adjust the doors Lock/Unlock"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:padding="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/fdrlinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="40dp"
+                android:padding="10dp"
+                android:layout_below="@+id/cardtext">
+
+                <TextView
+                    android:id="@+id/fdrtext"
+                    android:text="FDR"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:padding="15dp"
+                    android:gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <Spinner
+                    android:id="@+id/spinnerDropdownFDR"
+                    style="@style/CustomSpinnerStyle"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/fdllinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@+id/fdrlinear">
+
+                <TextView
+                    android:id="@+id/fdltext"
+                    android:text="FDL"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:padding="15dp"
+                    android:gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <Spinner
+                    android:id="@+id/spinnerDropdownFDL"
+                    style="@style/CustomSpinnerStyle"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rdrlinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@+id/fdllinear">
+
+                <TextView
+                    android:id="@+id/rdrtext"
+                    android:text="RDR"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:padding="15dp"
+                    android:gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <Spinner
+                    android:id="@+id/spinnerDropdownRDR"
+                    style="@style/CustomSpinnerStyle"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/rdllinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@+id/rdrlinear">
+
+                <TextView
+                    android:id="@+id/rdltext"
+                    android:text="RDL"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:padding="15dp"
+                    android:gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <Spinner
+                    android:id="@+id/spinnerDropdownRDL"
+                    style="@style/CustomSpinnerStyle"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center" />
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/clear"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="30dp"
+                android:backgroundTint="@color/white"
+                android:layout_below="@+id/rdllinear"
+                android:text="Clear"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="200dp"
+                android:layout_below="@+id/rdllinear"
+                android:backgroundTint="@color/white"
+                android:text="Save"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
